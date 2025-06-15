@@ -153,7 +153,6 @@ body {
 
 .arrow-right:hover,
 .arrow-left:hover {
-    /*двойная тень*/
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
