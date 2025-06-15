@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Space+Grotesk:wght@300..700&family=Staatliches&family=Spinnaker&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: cadetblue;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 41px;
+    letter-spacing: 0%;
+    text-align: center;
+}
+
+.container {
+    background: url('./img/bg.jpg') center center no-repeat;
+    background-size: cover;
+    height: auto;
+    padding: 46px 0;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.cards-wrapper {
+    display: flex;
+    overflow: hidden;
+}
+
+.cards {
+    display: flex;
+    gap: 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(182, 177, 177, 1);
+    width: 380px;
+    height: 502px;
+    padding: 16px 8px;
+    border-radius: 16px;
+}
+
+.icon {
+    margin-left: 11px;
+}
+
+.desc {
+    width: 317px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+    color: rgba(155, 154, 153, 1);
+    margin-left: 21px;
+    margin-top: 20px;
+}
+
+.cont-apos {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.apostrophes {
+    width: 38px;
+    height: 36px;
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 35px;
+    padding-right: 18px;
+    color: rgba(198, 197, 198, 1);
+}
+
+.people {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.person {
+    width: 79.39px;
+    height: 79.39px;
+    border-radius: 50%;
+}
+
+.name-job {
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+}
+
+.job-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+.company {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 39px;
+}
+
+.arrow-left,
+.arrow-right {
+    font-family: 'Spinnaker', sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 38px;
+    width: 32px;
+    height: 21px;
+    background-color: white;
+    border: 1px solid rgba(209, 207, 207, 1);
+    padding: 23px 18px;
+    border-radius: 50px;
+    text-align: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.arrow-left {
+    transform: rotate(-90deg);
+    transition: 0.3s ease-in-out;
+}
+
+.arrow-right {
+    transform: rotate(90deg);
+    transition: 0.3s ease-in-out;
+}
+
+.arrow-right:hover,
+.arrow-left:hover {
+    /*двойная тень*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.cont-arrow-left,
+.cont-arrow-right {
+    text-align: center;
+}
