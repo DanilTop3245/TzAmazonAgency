@@ -174,7 +174,6 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Мобильные: одна карточка на 90vw */
 @media (max-width: 748px) {
     .cards {
         gap: 0;
@@ -214,7 +213,6 @@ body {
     }
 }
 
-/* Планшеты и ПК — 3 карточки */
 @media (min-width: 749px) {
     .card {
         width: 380px;

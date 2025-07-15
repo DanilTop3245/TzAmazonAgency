@@ -8,7 +8,7 @@ const gap = 18;
 
 function getVisibleCardsCount() {
   if (window.innerWidth <= 748) return 1;
-  return 3; // и планшеты, и десктоп
+  return 3;
 }
 
 function updateCardsView() {
