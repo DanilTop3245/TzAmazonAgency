@@ -3,53 +3,54 @@ const leftArrow = document.querySelector(".arrow-left");
 const rightArrow = document.querySelector(".arrow-right");
 
 let currentIndex = 0;
-const cards = cardsContainer.children;
-const gap = 18;
 
-function getVisibleCardsCount() {
-  if (window.innerWidth <= 748) return 1;
-  return 3;
+function isMobile() {
+  return window.innerWidth <= 748;
 }
 
 function updateCardsView() {
-  const visibleCards = getVisibleCardsCount();
-  const maxIndex = Math.max(0, cards.length - visibleCards);
-  currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
-
-  if (visibleCards < cards.length) {
-    if (window.innerWidth <= 748) {
-      cardsContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    } else {
-      const cardWidth = cards[0].getBoundingClientRect().width;
-      const offset = currentIndex * (cardWidth + gap);
-      cardsContainer.style.transform = `translateX(-${offset}px)`;
-    }
+  if (isMobile()) {
+    cardsContainer.style.transition = "transform 0.3s ease-in-out";
+    cardsContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
   } else {
-    cardsContainer.style.transform = "";
+    // На ПК/таблетах transform не нужен
+    cardsContainer.style.transition = "none";
+    cardsContainer.style.transform = "none";
   }
 }
 
-
+// Влево = назад
 leftArrow.addEventListener("click", () => {
-  const visibleCards = getVisibleCardsCount();
-  const maxIndex = Math.max(0, cards.length - visibleCards);
-  currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
+  if (isMobile()) {
+    const cards = cardsContainer.children;
+    const maxIndex = cards.length - 1;
+    currentIndex = currentIndex > 0 ? currentIndex - 1 : maxIndex;
+  } else {
+    // ПК/таб: перелистать назад — последнюю карточку вставить в начало
+    const last = cardsContainer.firstElementChild;
+    cardsContainer.appendChild(last);
+  }
   updateCardsView();
 });
 
+// Вправо = вперёд
 rightArrow.addEventListener("click", () => {
-  const visibleCards = getVisibleCardsCount();
-  const maxIndex = Math.max(0, cards.length - visibleCards);
-  currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+  if (isMobile()) {
+    const cards = cardsContainer.children;
+    const maxIndex = cards.length - 1;
+    currentIndex = currentIndex < maxIndex ? currentIndex + 1 : 0;
+  } else {
+    // ПК/таб: перелистать вперёд — первую карточку вставить в конец
+    const first = cardsContainer.lastElementChild;
+    cardsContainer.prepend(first);
+  }
   updateCardsView();
 });
 
+// Обновление при ресайзе
 window.addEventListener("resize", () => {
   currentIndex = 0;
   updateCardsView();
 });
 
-window.addEventListener("load", () => {
-  updateCardsView();
-});
-
+window.addEventListener("load", updateCardsView);
