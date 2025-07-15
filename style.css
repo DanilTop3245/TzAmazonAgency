@@ -18,7 +18,7 @@ body {
 .container {
     background: url('./img/bg.jpg') center center no-repeat;
     background-size: cover;
-    height: auto;
+    height: 100vh;
     padding: 46px 0;
 }
 
@@ -160,4 +160,3 @@ body {
 .cont-arrow-right {
     text-align: center;
 }
-
