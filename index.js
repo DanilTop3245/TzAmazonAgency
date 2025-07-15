@@ -11,3 +11,4 @@ rightArrow.addEventListener("click", () => {
   const last = cardsContainer.lastElementChild;
   cardsContainer.prepend(last);
 });
+
