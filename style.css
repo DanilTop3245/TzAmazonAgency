@@ -18,7 +18,7 @@ body {
 .container {
     background: url('./img/bg.jpg') center center no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
     padding: 46px 0;
 }
 
@@ -196,7 +196,7 @@ body {
         margin-left: 0;
     }
     .icon {
-        width: 200px;
+        width: 100%;
     }
 
     .people {
